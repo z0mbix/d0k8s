@@ -12,3 +12,11 @@ variable "nginx" {
     replicas = 3
   }
 }
+
+variable "consul" {
+  type = "map"
+
+  default = {
+    replicas = 1
+  }
+}

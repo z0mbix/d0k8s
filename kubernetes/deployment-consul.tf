@@ -1,33 +1,33 @@
-resource "kubernetes_deployment" "web" {
+resource "kubernetes_deployment" "consul" {
   metadata {
-    name = "web"
+    name = "consul"
 
     labels {
-      name = "web-fe"
+      name = "consul"
     }
   }
 
   spec {
-    replicas = "${lookup(var.nginx, "replicas")}"
+    replicas = "${lookup(var.consul, "replicas")}"
 
     selector {
       match_labels {
-        name = "web-fe"
+        name = "consul"
       }
     }
 
     template {
       metadata {
         labels {
-          name        = "web-fe"
+          name        = "consul"
           environment = "${var.env_name}"
         }
       }
 
       spec {
         container {
-          image = "nginx:1.14.2"
-          name  = "web"
+          image = "consul:1.4.0"
+          name  = "consul"
         }
       }
     }
