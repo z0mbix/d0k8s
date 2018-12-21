@@ -27,12 +27,19 @@ Check out the node(s):
 
 ```
 kubectl get nodes
+NAME                  STATUS   ROLES    AGE   VERSION
+hopeful-bartik-34tg   Ready    <none>   60m   v1.13.1
 ```
 
 See your pods:
 
 ```
 kubectl get pods
+NAME                      READY   STATUS    RESTARTS   AGE
+consul-76ffc7bf57-4vpsq   1/1     Running   0          54s
+web-fd8dd954-5z7nd        1/1     Running   0          10s
+web-fd8dd954-t5qhz        1/1     Running   0          10s
+web-fd8dd954-zknzx        1/1     Running   0          10s
 ```
 
 When you're finished testing, kill it all off:
